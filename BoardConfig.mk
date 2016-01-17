@@ -19,15 +19,28 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := krait
+CLANG_O3 := true
+STRICT_ALIASING := false
+KRAIT_TUNINGS := true
+GRAPHITE_OPTS := false
+ENABLE_GCCONLY := true
 
 ENABLE_CPUSETS := true
 
 TARGET_NO_BOOTLOADER := true
 
+# Build
+# export USE_ORACLE_JAVA := 1
+
 # Inline kernel building
-TARGET_KERNEL_CONFIG := shamu_defconfig
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-5.3-uber/bin
+KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
+TARGET_KERNEL_CONFIG := B14CKB1RD_defconfig
 TARGET_KERNEL_SOURCE := kernel/moto/shamu
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
+
+# Rom Toolchain
+TARGET_GCC_VERSION_EXP := 4.9-uber
 
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE :=  2048
@@ -142,11 +155,6 @@ BOARD_HAL_STATIC_LIBRARIES := libdumpstate.shamu
 EXTENDED_FONT_FOOTPRINT := true
 
 # CMHW
-BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS := \
-    hardware/cyanogen   \
-    device/moto/shamu/cmhw
-
-USE_CLANG_PLATFORM_BUILD := true
+BOARD_HARDWARE_CLASS := device/moto/shamu/cmhw
 
 -include vendor/motorola/shamu/BoardConfigVendor.mk
