@@ -237,6 +237,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.ignore_ims_wlan=1 \
     persist.radio.data_con_rprt=1
 
+# Telephony-ext packages
+PRODUCT_PACKAGES += \
+    telephony-ext \
+    ims-ext-common
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 #Reduce IMS logging
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.ims.disableDebugLogs=1 \
