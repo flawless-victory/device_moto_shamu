@@ -8,5 +8,5 @@
    "repository":  "BigTopKrazies/proprietary_vendor_motorola",
    "target_path": "vendor/motorola",
    "branch":      "n"
- },
+ }
 ]
