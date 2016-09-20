@@ -110,10 +110,6 @@ PRODUCT_CHARACTERISTICS := nosdcard
 DEVICE_PACKAGE_OVERLAYS := \
     device/moto/shamu/overlay
 
-# Camera
-PRODUCT_PACKAGES += \
-    Snap
-
 PRODUCT_PACKAGES := \
     libwpa_client \
     hostapd \
@@ -211,6 +207,14 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     keystore.msm8084
+
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
+
+# Doze
+PRODUCT_PACKAGES += \
+    MotoDoze
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610
