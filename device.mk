@@ -110,6 +110,10 @@ PRODUCT_CHARACTERISTICS := nosdcard
 DEVICE_PACKAGE_OVERLAYS := \
     device/moto/shamu/overlay
 
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 PRODUCT_PACKAGES := \
     libwpa_client \
     hostapd \
