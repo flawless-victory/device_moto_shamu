@@ -88,6 +88,9 @@ TARGET_NO_RPC := true
 
 TARGET_BOARD_INFO_FILE := device/moto/shamu/board-info.txt
 
+# Disable dex-preoptimization
+WITH_DEXPREOPT := false
+
 USE_OPENGL_RENDERER := true
 TARGET_USES_ION := true
 TARGET_HW_DISK_ENCRYPTION := false
