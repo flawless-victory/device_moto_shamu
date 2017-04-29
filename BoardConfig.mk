@@ -24,6 +24,13 @@ ENABLE_CPUSETS := true
 
 TARGET_NO_BOOTLOADER := true
 
+#Inline kernel building
+TARGET_KERNEL_CONFIG := B14CKB1RD_defconfig
+TARGET_KERNEL_SOURCE := kernel/moto/shamu
+BOARD_KERNEL_IMAGE_NAME := zImage-dtb
+KERNEL_TOOLCHAIN_PREFIX := arm-linux-gnueabi-
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-linux-gnueabi-6.x/bin
+
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
@@ -32,8 +39,6 @@ BOARD_RAMDISK_OFFSET     := 0x02000000
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=shamu msm_rtb.filter=0x37 ehci-hcd.park=3 utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags utags.backup=/dev/block/platform/msm_sdcc.1/by-name/utagsBackup coherent_pool=8M vmalloc=300M
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-
-BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
