@@ -6,14 +6,14 @@ TARGET_SCREEN_WIDTH := 1440
 $(call inherit-product, device/moto/shamu/aosp_shamu.mk)
 
 # Inherit some common stuff
-$(call inherit-product, vendor/deso/common.mk)
+$(call inherit-product, vendor/aosip/common.mk)
 
 # Target device
 TARGET_DEVICE := shamu
 export TARGET_DEVICE
 
 # Override build propertie
-PRODUCT_NAME := deso_shamu
+PRODUCT_NAME := aosip_shamu
 PRODUCT_BRAND := google
 PRODUCT_DEVICE := shamu
 PRODUCT_MODEL := Nexus 6
